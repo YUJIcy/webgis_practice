@@ -1,0 +1,149 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    background-image: url(../imgs/background.jpg);
+    /*让背景图适配窗口*/
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.wrapper{
+    position: relative;
+    width: 450px;
+    height: 500px;
+    background: rgba(255, 255, 255,0.6);
+    box-shadow: 0 8px 32px rgba(116, 121, 141, 0.37);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* logo图片 */
+.title img {
+    display: block;
+    width: 100px;
+    height: auto;
+    margin: 15px auto 0;
+    border-radius: 12px;
+}
+
+/* 云上狮山字样 */
+h1{
+    font-family:"Microsoft Yahei UI";
+    color: red;
+    text-align: center;
+    margin-top: 10px;
+}
+/* 智慧校园管理系统字样 */
+h4{
+    font-family: "Microsoft Yahei UI";
+    text-align: center;
+}
+
+.input-box{
+    position: relative;
+    width: 360px;
+    margin: 20px 3px;
+}
+
+h2{
+    color:rgba(31,60,30,0.37);
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* 输入 */
+.input-box .icon{
+    position: absolute;
+    right: 4px;
+    line-height: 40px;
+}
+
+.icon-yonghu{
+    font-size: 24px;
+    color: rgb(210, 210, 214);
+}
+
+.icon-mima{
+    font-size: 24px;
+    color: rgb(210, 210, 214);
+}
+
+.icon-youxiang{
+    font-size: 24px;
+    color: rgb(210, 210, 214);
+}
+
+.input-box input{
+    text-align: center;
+    width: 360px;
+    height: 40px;
+    border-radius: 20px;
+    border-color:rgba(255, 255, 255,0.01);
+    outline: none;
+    font-size: 16px;
+}
+
+.input-box input:hover{
+    border-color:#fff;
+    border: none;
+}
+
+/* 记住密码 忘记密码 */
+.remember-forget{
+    color: #4972b1;
+    display: flex;
+    margin: -8px 10px 8px;
+    font-size: 14px;
+    justify-content: space-between;
+}
+
+.remember-forget a{
+    color:#4972b1;
+    text-decoration: none;
+}
+
+.remember-forget a:hover{
+    text-decoration: underline;
+}
+
+/* 按钮 */
+button{
+    width: 100%;
+    height: 40px;
+    background-color: #4972b1;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    font-size: 16px;
+    font-weight: 700;
+    font-family: "Microsoft Yahei UI";
+    color:#fff;
+}
+
+/* 下方用户注册 */
+.register-link{
+    font-size: 14px;
+    text-align: center;
+    margin: 25px 0 10px;
+}
+
+.register-link a{
+    color: #4972b1;
+    text-decoration: none;
+}
+
+.register-link a:hover{
+    text-decoration: underline;
+}
