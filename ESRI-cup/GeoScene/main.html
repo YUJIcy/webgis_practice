@@ -1,0 +1,197 @@
+<!-- 系统主界面设计，包含所有文本及字符内容 -->
+<!-- 连接6个css样式、3个js脚本 -->
+<!-- 网页布局在css样式中，网页操作代码位于js中 -->
+<!-- cy 2025-04-10 ~ 2025-05-28 -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/font.css" />
+    <link rel="stylesheet" href="./css/settingpage.css" />
+    <link rel="stylesheet" href="./css/featuretable.css" />
+    <link rel="stylesheet" href="./css/directions.css">
+    <link rel="stylesheet" href="./css/infopage.css">
+    <link
+      rel="stylesheet"
+      href="https://js.arcgis.com/4.32/esri/themes/light/main.css"
+    />
+  </head>
+  <body>
+    <div id="appContainer">
+      <div id="viewDiv"></div>
+      <div id="tableContainer" class="container">
+        <div id="tableDiv"></div>
+      </div>
+      <div id="mainDiv" class="esri-widget">
+        <label class="switch">
+          <input id="checkboxId" type="checkbox" checked="yes" />
+          <span class="slider round"></span>
+        </label>
+        <label class="labelText" id="labelText">隐藏属性表</label>
+      </div>
+    </div>
+
+    <!-- 图层显示 -->
+    <span id="layerToggle" class="esri-widget">
+      <input type="checkbox" id="hospitalsLayerBox" checked /> Hospitals
+      <input type="checkbox" id="regionLayerBox" checked /> RegionLayer
+      <input type="checkbox" id="roadLayerBox" checked /> roadLayer
+    </span>
+    <!-- 基本控件 -->
+    <div id="searchWidgetContainer"></div>
+    <div id="infobox"></div>
+    <div id="compassContainer"></div>
+    <div id="fullscreenContainer"></div>
+    <div id="homeContainer"></div>
+    <!-- 路径分析 -->
+    <div id="findSpot">点击选取报警点</div>
+    <div id="pathInfo">查看路径</div>
+    <div id="resetNA">重置分析</div>
+    <!-- 设置按钮 -->
+    <div id="setting">
+      <i class="iconfont icon-shezhi">&#xe70f;</i>
+    </div>
+    <!-- 拥堵指数按钮 -->
+    <div id="congestion">
+      <i class="iconfont icon-gaosu">&#xe600;</i>
+    </div>
+    <!-- 信息按钮 -->
+    <div id="info">
+      <i class="iconfont icon-i">&#xe67f;</i>
+    </div>
+    <!-- 设置页面 -->
+    <div id="settingPage">
+      <div class="settingHead">
+        <h2>Setting</h2>
+        <div id="shanchu">
+          <i class="iconfont icon-shanchu">&#xe611;</i>
+        </div>
+      </div>
+      <div class="settingContent">
+        <div class="settingComponent">
+          <div class="settingTitle">缓冲区设置</div>
+          <div class="content">
+            <div class="informationIndex">
+              <div class="detail">缓冲区初始距离</div>
+              <div class="detail">缓冲区扩增步长</div>
+            </div>
+            <div class="informationInput">
+              <input type="number" id="radiusInfo" />
+              <input type="number" id="radiusStepInfo" />
+            </div>
+          </div>
+        </div>
+        <div class="settingComponent">
+          <div class="settingTitle">显示设置</div>
+          <div class="content">
+            <div class="informationIndex">
+              <div class="detail">是否显示缓冲区图形</div>
+            </div>
+            <div class="informationInput">
+              <select id="graphicOption">
+                <option value="1">是</option>
+                <option value="2">否</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="settingSubmit">
+        <div id="submit1">保存</div>
+        <div id="submit2">提交</div>
+      </div>
+    </div>
+    <!-- 路径导航指引 -->
+    <div id="customDirections" class="esri-widget">
+      <div class="header">
+        <h3>路径导航指引</h3>
+      </div>
+      <div class="stats">
+        <span>总距离：<b id="totalDistance">0</b>公里</span>
+      </div>
+      <ul id="stepsList"></ul>
+    </div>
+    <!-- 系统信息页面 -->
+    <div id="infoPage">
+        <div id="infoTitle">
+          <h2>Description</h2>
+          <div id="shanchu2">
+            <i class="iconfont icon-shanchu">&#xe611;</i>
+          </div>
+        </div>
+        <div id="infoContent">
+          <div id="left">
+            <div id="infoText1">概述</div>
+            <div id="infoText2">体系结构</div>
+            <div id="infoText3">数据发布指南</div>
+            <div id="infoText4">不足与计划</div>
+          </div>
+          <div id="right">
+            <div id="info1">
+              <h2>引言</h2>
+              <p><b>系统名称：</b>生命的最后一公里——基于最短路径的武汉市救护车到报警点最优距离分析系统</p>
+              <p><b>开发目的：</b>通过动态规划救护车最优路线，缩短急救响应时间，从而提升危急患者的救治成功率。
+                系统覆盖武汉市全域，利用精准定位和路况数据，确保救护车以最快速度抵达报警地点，为抢救生命争取宝贵时间。</p>
+              <p><b>系统用户：</b>报警用户、救护人员、系统管理人员</p>
+            </div>
+            <div id="info2">
+              <h2>系统架构</h2>
+              <p>Browser/Server Architecture  浏览器/服务器架构</p>
+              <div class="imgContainer">
+                <img src="./images/211.png" width="500px">
+                <img src="./images/212.png" width="500px">
+              </div>
+              <p><b>DataStore:</b>Web GIS平台的数据存储核心，提供多种专用数据库类型,
+                为托管服务提供底层数据支撑，支持高可用性配置（如主备模式）和自动备份机制</p>
+              <p><b>WebAdaptor:</b>Web服务器与GIS服务器的集成组件，主要功能包括请求转发、
+                安全增强、​​统一入口，常用于企业级部署，避免直接暴露ArcGIS Server的默认端口</p>
+              <p><b>Server:</b>服务托管平台，核心功能包括服务发布与管理、资源扩展、联合托管​，
+              支持分布式部署和负载均衡，可运行于物理机、虚拟机或云平台</p>
+              <p><b>Portal:</b>Web GIS的门户中枢，主要承担资源管理​、权限控制​​、应用构建​​、统一入口的作用</p>
+              <p><b>协同关系：</b>用户通过Portal访问服务，Portal调用联合的ArcGIS Server服务，
+                服务数据存储于DataStore，Web Adaptor负责安全通信</p>
+              <h2>后台管理页面</h2>
+              <p><b>以GeoScene Enterprise为例</b></p>
+              <img src="./images/221.png" width="500px">
+              <img src="./images/222.png" width="500px">
+              <h2>编程语言</h2>
+              <p>HTML CSS JavaScript</p>
+              <p><b>API:</b>ArcGIS Maps SDK for JavaScript</p>
+              <h2>软件体系</h2>
+              <p>ArcGIS Pro ; ArcGIS Enterprise / GeoScene Enterprise</p>
+            </div>
+            <div id="info3">
+              <h3>支持软件</h3>
+              <p><b>ArcGIS Pro</b></p>
+              <h3>数据发布流程</h3>
+              <p><b>连接门户系统</b></p>
+              <img src="./images/31.png" width="500px">
+              <p><b>共享为Web图层</b></p>
+              <img src="./images/32.png" width="500px">
+              <p><b>查看服务器管理页面</b></p>
+              <img src="./images/33.png" width="500px">
+            </div>
+            <div id="info4">
+              <h3>不足</h3>
+              <p>1.路径导航指引部分有待完善</p>
+              <p>2.缺乏道路权重设计部分的编码实现</p>
+              <p>3.尚未找到实时数据的接入方法</p>
+              <p>4.编码略显凌乱，模块化程度低</p>
+              <h3>计划</h3>
+              <p>1.深入理解JSON结构，完善导航信息提取和显示功能</p>
+              <p>2.编写与GEE平台的接口，引入权重设计模块</p>
+              <p>3.探索实时数据接入方法</p>
+              <p>4.采用合适前后端框架，增强功能模块化水平，提高内聚性，降低耦合性</p>
+            </div>
+          </div>
+        </div>
+    </div>
+    <div id="overLay"></div>
+  </body>
+  <script src="https://js.arcgis.com/4.32/"></script>
+  <script src="./scripts/main.js"></script>
+  <script src="./scripts/infopage.js"></script>
+</html>

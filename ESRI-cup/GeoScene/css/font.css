@@ -1,0 +1,54 @@
+/* font.css */
+/* 左侧功能按键图标样式，采用iconfont unicode方式进行引用 */
+@font-face {
+  font-family: 'iconfont';
+  src: url('../fonts/iconfont.eot'); /* IE9 */
+  src: url('../fonts/iconfont.woff2') format('woff2'),
+       url('../fonts/iconfont.woff') format('woff'),
+       url('../fonts/iconfont.ttf') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 24px;
+  color: #6a6a6a;
+  background-color:#fefefe;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.iconfont:hover{
+  color: #393939;
+  background-color: #f3f3f3;
+}
+
+.icon-shezhi{
+  position: absolute;
+  z-index: 99;
+  top: 240px;
+  left: 15px;
+  padding: 5px;
+}
+
+.icon-gaosu{
+  position: absolute;
+  z-index: 99;
+  top: 300px;
+  left: 15px;
+  padding: 5px;
+}
+
+.icon-i{
+  position: absolute;
+  z-index: 100;
+  top: 360px;
+  left: 15px;
+  padding: 5px;
+}
+
+.icon-shanchu{
+  z-index: 99;
+  margin: 5px;
+  padding: 5px;
+}

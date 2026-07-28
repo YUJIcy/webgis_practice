@@ -1,0 +1,74 @@
+/* infopage.css */
+/* 信息页样式设计 */
+#infoPage{
+    position: absolute;
+    z-index: 101;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: none;
+    flex-direction: column;
+    width: 700px;
+    height: 800px;
+    background-color: white;
+    padding: 10px;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.3);
+}
+
+#infoTitle{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-bottom: #6a6a6a 1px solid;
+}
+
+#infoContent{
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    border-bottom: #6a6a6a 1px solid;
+}
+
+#left{
+    display: flex;
+    flex-direction: column;
+    flex: 2;
+}
+
+#right{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex: 8;
+    background-color: #f3f3f3;
+    height: 100%;
+    padding-left: 10px;
+}
+
+#infoText1,#infoText2,#infoText3,#infoText4{
+    margin: 2px;
+    padding: 10px;
+    
+}
+
+#infoText1:hover,#infoText2:hover,#infoText3:hover,#infoText4:hover{
+    box-shadow: 0 1px 5px rgba(0,0,0,0.3) ;
+    border-radius: 4px;
+}
+
+#info1{
+    display: flex;
+    flex-direction: column;
+}
+
+#info2,#info3,#info4{
+    display: none;
+    flex-direction: column;
+    overflow-y: auto;
+    max-height: 717px;
+}
+
+#shanchu2{
+    position: absolute;
+    right:10px;
+}

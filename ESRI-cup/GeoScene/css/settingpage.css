@@ -1,0 +1,104 @@
+/* settingpage.css */
+/* 缓冲区参数设置样式 */
+#settingPage{
+    position: absolute;
+    z-index: 101;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: none;
+    flex-direction: column;
+    padding: 5px;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.settingHead{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-bottom: #6a6a6a 1px solid;
+}
+
+.settingHead h2{
+    margin: 0;
+    padding: 0 0 0px 10px;
+    flex: 9;
+}
+
+.settingComponent{
+    background-color: #f3f3f3;
+    padding: 10px;
+    padding: 20px;
+}
+
+.content{
+    display: flex;
+    flex-direction: row;
+}
+
+.informationIndex,.informationInput{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.informationInput{
+    gap: 10px;
+    margin: 10px;
+}
+
+.informationInput input{
+    outline: none;
+    border: 0;
+    font-size: 16px;
+    width: 240px;
+}
+
+#graphicOption{
+    outline: none;
+    border: 0;
+    width:210px;
+    font-size: 16px;
+}
+
+/* option{
+    width: 40px;
+} */
+
+.settingSubmit{
+    display: flex;
+    flex-direction: row;
+}
+
+#submit1,#submit2{
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    margin: 5px;
+}
+
+#submit1:hover,#submit2:hover{
+    background-color: #f3f3f3;
+}
+
+.settingContent{
+    gap: 10px;
+    background-color: #fefefe;
+    display: flex;
+    flex-direction: column;
+    border-bottom: #6a6a6a 1px solid ;
+}
+
+.settingTitle{
+    margin: 0;
+    padding: 0;
+    color: darkgrey;
+    font-family: "dengxian";
+}
+
+
+
